@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "pyenvdemo"
+version = "0.1.0"
+description = "A tutorial Python package demonstrating virtual environments, package structure, and cloud database connectivity using .env files."
+authors = ["Benjamin Contrino <benjamin.contrino@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+packages = [{ include = "pyenvdemo", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+python-dotenv = "^1.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+sphinx = "^7.0.0"
+
+[tool.poetry.group.cloud.dependencies]
+# SQL Server
+pyodbc = "^5.0.0"
+sqlalchemy = "^2.0.0"
+# Azure Blob Storage
+azure-storage-blob = "^12.0.0"
+# Databricks
+databricks-sql-connector = "^3.0.0"
+# Snowflake
+snowflake-sqlalchemy = "^1.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
